@@ -23,7 +23,11 @@ const files = {
 gulp.task('styles', () => {
   return gulp.src(files.src.styles)
     .pipe(sass())
-    .pipe(postcss([ autoprefixer({ browsers: browserslist[ENV] }) ]))
+    .pipe(postcss([ 
+      autoprefixer({ 
+        browsers: browserslist[ENV] 
+      }) 
+    ]))
     .pipe(gulp.dest(files.dest.styles))
     .pipe(browsersync.reload({
       stream: true
