@@ -5,6 +5,10 @@ const sass = require('gulp-sass');
 const browsersync = require('browser-sync');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
+const {browserslist} = require('./package');
+const argv = require('yargs').argv;
+
+const ENV = (argv.pro === undefined) ? 'development' : 'production';
 
 const files = {
   src: {
@@ -19,7 +23,7 @@ const files = {
 gulp.task('styles', () => {
   return gulp.src(files.src.styles)
     .pipe(sass())
-    .pipe(postcss([ autoprefixer() ]))
+    .pipe(postcss([ autoprefixer({ browsers: browserslist[ENV] }) ]))
     .pipe(gulp.dest(files.dest.styles))
     .pipe(browsersync.reload({
       stream: true
