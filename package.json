@@ -1,0 +1,26 @@
+{
+  "name": "editor-html",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "scripts": {
+    "serve:dev": "gulp"
+  },
+  "browserslist": {
+    "production": [
+      "> 1%",
+      "last 2 versions"
+    ],
+    "development": [
+      "last 1 version"
+    ]
+  }
+}
