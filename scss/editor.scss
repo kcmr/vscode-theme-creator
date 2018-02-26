@@ -1,12 +1,14 @@
+@import "vars";
+
 html {
-  --bg-dark: #141820;
+  --bg-dark:   #141820;
   --bg-medium: #1C212E;
   --bg-editor: #212837;
 }
 
 body {
   margin: 0;
-  background-color: #c2c7ce;
+  background-color: #C0C9D7;
 }
 
 .editor {
@@ -19,9 +21,11 @@ body {
   overflow: hidden;
 }
 
-/* ==========================================================================
-   titleBar
-   ========================================================================== */
+
+// ==========================================================================
+// titleBar
+// ==========================================================================
+
 .titleBar {
   height: 22px;
   background-color: var(--bg-medium);
@@ -32,9 +36,10 @@ body {
   }
 }
 
-/* ==========================================================================
-   window buttons
-   ========================================================================== */
+// ==========================================================================
+// window buttons
+// ==========================================================================
+
 .winBtn {
   width: 12px;
   height: 12px;
@@ -43,28 +48,30 @@ body {
   margin-right: 4px;
 
   &--close {
-    background-color: #FF6258;
+    background-color: $red;
   }
 
   &--minimize {
-    background-color: #FFC12F;
+    background-color: $yellow;
   }
 
   &--maximize {
-    background-color: #28CA42;
+    background-color: $green;
   }
 }
 
-/* ==========================================================================
-   Editor body (activityBar + sidebar + code)
-   ========================================================================== */
+
+// ==========================================================================
+// Editor body (activityBar + sidebar + editor)
+// ==========================================================================
+
 .body {
   display: flex;
 }
 
 .activityBar {
   width: 50px;
-  height: 200px;
+  height: 35vh;
   background-color: var(--bg-dark);
 }
 
@@ -76,4 +83,15 @@ body {
 .code {
   flex: 1;
   background-color: var(--bg-editor);
+}
+
+
+// ==========================================================================
+// statusBar
+// ==========================================================================
+
+.statusBar {
+  height: 22px;
+  background-color: var(--bg-editor);
+  border-top: 1px solid var(--bg-dark);
 }
