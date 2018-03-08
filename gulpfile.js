@@ -3,6 +3,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const browsersync = require('browser-sync');
+const nodemon = require('gulp-nodemon');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
@@ -14,10 +15,10 @@ const ENV = (argv.pro === undefined) ? 'development' : 'production';
 const files = {
   src: {
     styles: 'scss/**/*.scss',
-    watch: ['*.html']
+    watch: ['**/*.handlebars', '*.js']
   },
   dest: {
-    styles: 'styles'
+    styles: 'static/styles'
   }
 };
 
@@ -39,18 +40,28 @@ gulp.task('styles', () => {
     }));
 });
 
-gulp.task('server', () => {
+gulp.task('nodemon', (cb) => {
+  let started = false;
+  return nodemon({
+    script: 'app.js'
+  }).on('start', () => {
+    if (!started) {
+      cb();
+      started = true;
+    }
+  });
+});
+
+gulp.task('browser-sync', ['nodemon'], () => {
   browsersync({
-    server: {
-      baseDir: './'
-    },
+    proxy: 'http://localhost:5000',
     open: false,
     notify: false,
     ghostMode: false
   });
 });
 
-gulp.task('default', ['server', 'styles'], () => {
+gulp.task('default', ['browser-sync', 'styles'], () => {
   gulp.watch(files.src.styles, ['styles']);
   gulp.watch(files.src.watch, browsersync.reload);
 });
