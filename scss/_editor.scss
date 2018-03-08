@@ -1,8 +1,8 @@
 .window {
   display: flex;
   flex-direction: column;
-  max-width: 80%;
-  margin: 12vh auto 0;
+  width: 80%;
+  margin: 5vh auto 0;
   box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -55,7 +55,7 @@
 
 .activityBar {
   width: 50px;
-  height: 35vh;
+  height: 500px;
   background-color: var(--bg-activityBar);
 }
 

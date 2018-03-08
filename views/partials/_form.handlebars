@@ -1,22 +1,56 @@
-<form method="post" action="theme.json">
-  <fieldset>
-    <legend>Editor</legend>
-    <div>
-      <label for="titlebar-bg">Titlebar background</label>
-      <input type="color" id="titlebar-bg" name="titleBar.activeBackground" value="#141820" data-css-var="--bg-titleBar">
-    </div>
+<form class="form" method="post" action="theme.json">
+  <div class="form__row">
+    <fieldset>
+      <legend>editor</legend>
+      <div class="color-field">
+        <label for="titlebar-bg">Titlebar background</label>
+        <span class="input-wrapper">
+          <input type="color" id="titlebar-bg" name="titleBar.activeBackground" value="#141820" data-css-var="--bg-titleBar">
+        </span>
+      </div>
+  
+      <div class="color-field">
+        <label for="activity-bar-bg">ActivityBar background</label>
+        <span class="input-wrapper">
+          <input type="color" id="activity-bar-bg" name="activityBar.background" value="#1C212E" data-css-var="--bg-activityBar">
+        </span>
+      </div>
+  
+      <div class="color-field">
+        <label for="sidebar-bg">Sidebar background</label>
+        <span class="input-wrapper">
+          <input type="color" id="sidebar-bg" name="sideBar.background" value="#1C212E" data-css-var="--bg-sidebar">
+        </span>
+      </div>
+    </fieldset>
+  
+    <fieldset>
+      <legend>tokenColors</legend>
+      <div class="color-field">
+        <label for="titlebar-bg">Titlebar background</label>
+        <span class="input-wrapper">
+          <input type="color" id="titlebar-bg" name="titleBar.activeBackground" value="#141820" data-css-var="--bg-titleBar">
+        </span>
+      </div>
+  
+      <div class="color-field">
+        <label for="activity-bar-bg">ActivityBar background</label>
+        <span class="input-wrapper">
+          <input type="color" id="activity-bar-bg" name="activityBar.background" value="#1C212E" data-css-var="--bg-activityBar">
+        </span>
+      </div>
+  
+      <div class="color-field">
+        <label for="sidebar-bg">Sidebar background</label>
+        <span class="input-wrapper">
+          <input type="color" id="sidebar-bg" name="sideBar.background" value="#1C212E" data-css-var="--bg-sidebar">
+        </span>
+      </div>
+    </fieldset>
+  </div>
 
-    <div>
-      <label for="activity-bar-bg">ActivityBar background</label>
-      <input type="color" id="activity-bar-bg" name="activityBar.background" value="#1C212E" data-css-var="--bg-activityBar">
-    </div>
-
-    <div>
-      <label for="sidebar-bg">Sidebar background</label>
-      <input type="color" id="sidebar-bg" name="sideBar.background" value="#1C212E" data-css-var="--bg-sidebar">
-    </div>
-  </fieldset>
-
-  <button type="reset">Argg! It's horrible!</button>
-  <button type="submit">Download theme</button>
+  <div class="form__actions">
+    <button type="reset">Argg! It's awful!</button>
+    <button type="submit" disabled>Download theme</button>
+  </div>
 </form>

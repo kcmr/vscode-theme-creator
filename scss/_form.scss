@@ -1,0 +1,65 @@
+.form {
+  background-color: #fff;
+  padding-top: 20px;
+  margin-top: 40px;
+  flex: 1;
+
+  &__row {
+    display: flex;
+    max-width: 80%;
+    margin: auto;
+  }
+}
+
+fieldset {
+  flex: 1;
+  border: 0;
+  padding: 0;
+}
+
+legend,
+label {
+  font-family: monospace, monospace;
+}
+
+legend {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.color-field {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.input-wrapper {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+
+  input {
+    -webkit-appearance: none;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    border: none;
+    cursor: pointer;
+
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+      border: none;
+    }
+  }
+}
