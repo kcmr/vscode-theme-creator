@@ -5,6 +5,7 @@ const sass = require('gulp-sass');
 const browsersync = require('browser-sync');
 const nodemon = require('gulp-nodemon');
 const postcss = require('gulp-postcss');
+const pxtorem = require('postcss-pixels-to-rem');
 const autoprefixer = require('autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const {browserslist} = require('./package');
@@ -16,11 +17,19 @@ const PORT = 5000;
 const files = {
   src: {
     styles: 'scss/**/*.scss',
-    watch: ['**/*.handlebars', '*.js']
+    watch: ['**/*.handlebars', '**/*.js']
   },
   dest: {
     styles: 'static/styles'
   }
+};
+
+const pxtoremConfig = {
+  exclude: [
+    'border', 
+    'box-shadow', 
+    'border-radius'
+  ]
 };
 
 gulp.task('styles', () => {
@@ -30,6 +39,7 @@ gulp.task('styles', () => {
       outputStyle: 'compressed'
     }))
     .pipe(postcss([ 
+      pxtorem(pxtoremConfig),
       autoprefixer({ 
         browsers: browserslist[ENV] 
       }) 
