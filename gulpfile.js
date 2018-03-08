@@ -11,6 +11,7 @@ const {browserslist} = require('./package');
 const argv = require('yargs').argv;
 
 const ENV = (argv.pro === undefined) ? 'development' : 'production';
+const PORT = 5000;
 
 const files = {
   src: {
@@ -54,7 +55,7 @@ gulp.task('nodemon', (cb) => {
 
 gulp.task('browser-sync', ['nodemon'], () => {
   browsersync({
-    proxy: 'http://localhost:5000',
+    proxy: `http://localhost:${PORT}`,
     open: false,
     notify: false,
     ghostMode: false
