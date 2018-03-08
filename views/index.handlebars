@@ -1,9 +1,13 @@
-{{> _titlebar}}
+<div class="window">
+  {{> _titlebar}}
 
-<div class="body">
-  {{> _activitybar}}
-  {{> _sidebar}}
-  {{> _editor}}
+  <div class="body">
+    {{> _activitybar}}
+    {{> _sidebar}}
+    {{> _editor}}
+  </div>
+
+  {{> _statusbar}}
 </div>
 
-{{> _statusbar}}
+{{> _form}}
