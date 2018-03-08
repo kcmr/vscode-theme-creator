@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 
 const PORT = 5000;
 const app = express();
+const APP_TITLE = 'Paint your Code!';
 
 // middleware
 app.use(express.static('static'));
@@ -20,7 +21,7 @@ app.set('json spaces', 4);
 
 // routes
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', {title: APP_TITLE});
 });
 
 app.post('/theme.json', (req, res) => {
