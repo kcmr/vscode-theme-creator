@@ -7,7 +7,8 @@ const bodyParser = require('body-parser');
 
 const PORT = 5000;
 const app = express();
-const APP_TITLE = 'Paint your Code!';
+const APP_TITLE = 'Paint your Code';
+const APP_DESCRIPTION = 'A visual editor for Visual Studio Code themes';
 
 // middleware
 app.use(express.static('static'));
@@ -21,7 +22,10 @@ app.set('json spaces', 4);
 
 // routes
 app.get('/', (req, res) => {
-  res.render('index', {title: APP_TITLE});
+  res.render('index', {
+    title: APP_TITLE,
+    description: APP_DESCRIPTION
+  });
 });
 
 app.post('/theme.json', (req, res) => {
