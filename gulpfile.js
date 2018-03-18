@@ -57,8 +57,8 @@ gulp.task('nodemon', (cb) => {
     script: 'app.js'
   }).on('start', () => {
     if (!started) {
-      cb();
       started = true;
+      cb();
     }
   });
 });
