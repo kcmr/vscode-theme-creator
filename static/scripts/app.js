@@ -20,7 +20,7 @@
   const submitBtn = d.querySelector('button[type="submit"]');
 
   for (const input of inputs) {
-    input.addEventListener('change', updateCSSVars);
+    input.addEventListener('input', updateCSSVars);
   }
 
   form.addEventListener('reset', handleFormReset);
