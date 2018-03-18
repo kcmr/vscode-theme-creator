@@ -67,13 +67,14 @@ legend {
 
   input {
     -webkit-appearance: none;
-    width: 17px;
-    height: 17px;
+    width: 19px;
+    height: 19px;
     position: absolute;
     top: -2px;
     left: -2px;
     border: none;
     cursor: pointer;
+    padding: 0;
 
     &::-webkit-color-swatch-wrapper {
       padding: 0;
