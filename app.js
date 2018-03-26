@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 const PORT = 5000;
 const app = express();
-const APP_TITLE = 'Paint your Code';
+const APP_TITLE = 'Color your Code';
 const APP_DESCRIPTION = 'A visual editor for Visual Studio Code themes';
 
 // middleware
